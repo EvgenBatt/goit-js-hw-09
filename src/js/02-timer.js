@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import Notiflix from 'notiflix';
 
 let endDate;
 
@@ -11,7 +12,7 @@ const options = {
   onClose(selectedDates) {
     const chosenDate = selectedDates[0];
     if (chosenDate <= new Date()) {
-      window.alert('Please choose a date in the future');
+      Notiflix.Notify.failure('Please choose a date in the future');
       document.querySelector('[data-start]').setAttribute('disabled', true);
     } else {
       endDate = chosenDate;
@@ -23,7 +24,7 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 function addLeadingZero(value) {
-  return value < 10 ? `0${value}` : `${value}`;
+  return String(value).padStart(2, '0');
 }
 
 function convertMs(ms) {
