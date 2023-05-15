@@ -9,6 +9,7 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  dateFormat: 'd-m-Y H:i',
   onClose(selectedDates) {
     const chosenDate = selectedDates[0];
     if (chosenDate <= new Date()) {
@@ -78,8 +79,6 @@ document.querySelector('[data-start]').addEventListener('click', () => {
 });
 
 // Розмітка елементів
-
-document.body.style.margin = '50px 30%';
 
 const timerDiv = document.querySelector('.timer');
 timerDiv.setAttribute('style', 'display: flex; gap: 10px; margin-top: 10px;');
