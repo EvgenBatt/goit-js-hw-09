@@ -78,6 +78,8 @@ document.querySelector('[data-start]').addEventListener('click', () => {
   startTimer(endDate);
 });
 
+document.querySelector('[data-start]').setAttribute('disabled', true);
+
 // Розмітка елементів
 
 const timerDiv = document.querySelector('.timer');
